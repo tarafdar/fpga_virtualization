@@ -172,13 +172,13 @@ module app_region
     );
 
     //network application access app
-    packet_loopback_app
-    #(
+    packet_loopback_app pr_inst
+    /*#(
         .AXIS_BUS_WIDTH         (NET_AXIS_BUS_WIDTH),
         .AXIS_ID_WIDTH          (NET_AXIS_ID_WIDTH),
         .AXIS_DEST_WIDTH        (NET_AXIS_DEST_WIDTH),
         .MAX_FIFO_DEPTH         (256)
-    )
+    )*/
     (
         //Egress Output AXI stream
         .axis_out_tdata     (axis_tx_m_tdata),

@@ -31,8 +31,8 @@ module packet_loopback_app
 #(
     //AXI Stream Params
     parameter AXIS_BUS_WIDTH = 64,
-    parameter AXIS_ID_WIDTH = 4,
-    parameter AXIS_DEST_WIDTH = 4,
+    parameter AXIS_ID_WIDTH = 1,
+    parameter AXIS_DEST_WIDTH = 1,
 
     //Features
     parameter MAX_FIFO_DEPTH = 256 //Must be power of 2, greater than MTU/AXIS_BUS_WIDTH
@@ -228,6 +228,8 @@ module packet_loopback_app
                 ctrl_rdata <= packet_count_tx;
             else if(rd_addr == 2)
                 ctrl_rdata <= fifo_was_full;
+            else if(rd_addr == 3)
+                ctrl_rdata <= 32'h42;
             else
                 ctrl_rdata <= 0;
 

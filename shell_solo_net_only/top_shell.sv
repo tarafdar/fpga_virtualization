@@ -376,12 +376,13 @@ module top_shell
 
    //The application Region (PR Region)
    app_region
-   #(
+ /*  #(
       .NET_AXIS_BUS_WIDTH     (NET_AXIS_BUS_WIDTH),
       .NET_AXIS_ID_WIDTH      (NET_AXIS_ID_WIDTH),
       .NET_AXIS_DEST_WIDTH    (NET_AXIS_DEST_WIDTH),
       .NET_MAX_PACKET_LENGTH  (NET_MAX_PACKET_LENGTH)
    )
+   */
    app_reg_inst
    (
       //Egress Input AXI stream (application regions send packets to this interface)
